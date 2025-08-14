@@ -11,12 +11,12 @@
       background: url('images/sand.png') no-repeat center center fixed;
       background-size: cover;
       color: #5C4033;
-      font-size: 3rem; /* увеличиваем основной текст в 2–3 раза */
+      font-size: 2rem; /* чуть уменьшенный текст */
       overflow-x: hidden;
     }
 
     section {
-      padding: 8rem 2rem;
+      padding: 6rem 2rem;
       text-align: center;
       position: relative;
       z-index: 1;
@@ -27,9 +27,9 @@
       background: linear-gradient(90deg, #CBA135, #5C4033);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 1px 1px 12px rgba(255,255,255,0.4);
+      text-shadow: 2px 2px 12px rgba(255,255,255,0.7); /* белое сияние */
       margin-bottom: 2rem;
-      font-size: 6rem; /* крупные заголовки */
+      font-size: 4rem; /* уменьшенные заголовки */
       animation: glow 3s ease-in-out infinite alternate;
     }
 
@@ -38,27 +38,27 @@
       margin: 0 auto 2rem;
       line-height: 1.6;
       color: #5C4033;
-      font-size: 3rem; /* увеличиваем основной текст */
-      text-shadow: 0 0 4px rgba(255,255,255,0.2);
+      font-size: 2rem; /* уменьшенный основной текст */
+      text-shadow: 0 0 4px rgba(255,255,255,0.3);
       animation: textGlow 4s ease-in-out infinite alternate;
     }
 
     a.button {
       display: inline-block;
-      padding: 1.5rem 3rem;
+      padding: 1rem 2rem;
       background: #CBA135;
       color: #fff;
       text-decoration: none;
       font-weight: bold;
       border-radius: 1rem;
       margin-top: 1rem;
-      font-size: 3rem; /* кнопки тоже крупные */
+      font-size: 2rem; /* уменьшенные кнопки */
       transition: all 0.3s;
     }
 
     a.button:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 20px #FFD700;
+      box-shadow: 0 0 20px #FFFFFF;
     }
 
     .circle {
@@ -70,22 +70,22 @@
     }
 
     .icon {
-      width: 300px; /* увеличиваем картинки */
-      margin: 0 auto 1rem;
+      width: 400px; /* увеличиваем картинки */
+      height: auto;
+      margin: 0 auto 2rem;
       display: block;
     }
 
-    /* Анимации мерцания */
     @keyframes glow {
-      0% { text-shadow: 2px 2px 10px rgba(255,255,255,0.3); }
-      50% { text-shadow: 4px 4px 20px rgba(255,215,0,0.7); }
-      100% { text-shadow: 2px 2px 10px rgba(255,255,255,0.3); }
+      0% { text-shadow: 2px 2px 10px rgba(255,255,255,0.5); }
+      50% { text-shadow: 4px 4px 20px rgba(255,255,255,0.9); }
+      100% { text-shadow: 2px 2px 10px rgba(255,255,255,0.5); }
     }
 
     @keyframes textGlow {
-      0% { text-shadow: 0 0 4px rgba(255,255,255,0.2); }
-      50% { text-shadow: 0 0 10px rgba(255,215,0,0.5); }
-      100% { text-shadow: 0 0 4px rgba(255,255,255,0.2); }
+      0% { text-shadow: 0 0 4px rgba(255,255,255,0.3); }
+      50% { text-shadow: 0 0 10px rgba(255,255,255,0.6); }
+      100% { text-shadow: 0 0 4px rgba(255,255,255,0.3); }
     }
 
   </style>
@@ -93,20 +93,17 @@
 <body>
   <div id="circles"></div>
 
-  <!-- Hero Section -->
   <section>
     <h1>Smart Beauty</h1>
     <p>AI-powered skin analysis in seconds</p>
     <a href="#cta" class="button">Join Waitlist</a>
   </section>
 
-  <!-- Problem Section -->
   <section>
     <h2>The Problem</h2>
     <p>Millions struggle to choose the right skincare. Traditional consultations are expensive, slow, and often generic. People want quick, personalized advice they can trust.</p>
   </section>
 
-  <!-- How It Works -->
   <section>
     <h2>How It Works</h2>
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:4rem;">
@@ -128,7 +125,6 @@
     </div>
   </section>
 
-  <!-- AI Technology -->
   <section>
     <h2>AI Technology</h2>
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:4rem; align-items:center;">
@@ -143,13 +139,11 @@
     </div>
   </section>
 
-  <!-- Benefits -->
   <section>
     <h2>Benefits</h2>
     <p>Fast, accurate, and private AI skin analysis for everyone.</p>
   </section>
 
-  <!-- Call to Action -->
   <section id="cta">
     <h2>Be the First to Try Smart Beauty</h2>
     <a href="https://forms.gle/" class="button">Join Waitlist</a>
@@ -159,7 +153,6 @@
     &copy; 2025 Smart Beauty. All rights reserved.
   </footer>
 
-  <!-- JS для анимированных кругов -->
   <script>
     const circleContainer = document.getElementById('circles');
     const circles = [];
