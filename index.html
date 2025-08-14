@@ -9,9 +9,9 @@
   <style>
     body {
       font-family: 'Chic Olivia', sans-serif;
-      color: #4B2E2E; /* chocolate */
+      color: #4B2E2E;
       font-size: 1.125rem;
-      background: url('images/sand.png') repeat;
+      background: url('images/sand.jpg') repeat;
       background-size: cover;
       background-attachment: fixed;
     }
@@ -25,24 +25,20 @@
       border-radius: 50%;
       opacity: 0.7;
       animation: pulse 5s infinite alternate;
-    }
-
-    .gold-circle {
-      background: rgba(255, 215, 0, 0.4);
+      background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 70%);
     }
 
     .diamond-circle {
-      background: rgba(173, 216, 230, 0.6);
+      background: radial-gradient(circle, rgba(173,216,230,0.8) 0%, rgba(173,216,230,0.2) 70%);
     }
 
     @keyframes pulse {
-      0% { transform: scale(0.5); opacity: 0.5; }
-      100% { transform: scale(1.5); opacity: 1; }
+      0% { transform: scale(0.5); opacity: 0.3; }
+      100% { transform: scale(1.5); opacity: 0.8; }
     }
   </style>
 </head>
 <body>
-  <!-- Animated Circles Background -->
   <div id="circles"></div>
 
   <!-- Hero Section -->
@@ -63,17 +59,17 @@
     <h2 class="text-3xl font-bold text-center mb-10">How It Works</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
       <div class="text-center">
-        <img src="images/take_photo.png" alt="Take Photo" class="mx-auto w-24 mb-4" />
+        <img src="images/icon_camera.png" alt="Take Photo" class="mx-auto w-24 mb-4" />
         <h3 class="font-semibold mb-2">1. Take a Photo</h3>
         <p>Upload 1–3 clear selfies from different angles.</p>
       </div>
       <div class="text-center">
-        <img src="images/ai_analysis.png" alt="AI Analysis" class="mx-auto w-24 mb-4" />
+        <img src="images/icon_ai.png" alt="AI Analysis" class="mx-auto w-24 mb-4" />
         <h3 class="font-semibold mb-2">2. AI Analysis</h3>
         <p>Our AI detects wrinkles, acne, pigmentation, and more.</p>
       </div>
       <div class="text-center">
-        <img src="images/report.png" alt="Report" class="mx-auto w-24 mb-4" />
+        <img src="images/icon_report.png" alt="Report" class="mx-auto w-24 mb-4" />
         <h3 class="font-semibold mb-2">3. Get Results</h3>
         <p>Receive instant, personalized skincare recommendations.</p>
       </div>
@@ -86,11 +82,11 @@
     <p class="text-center mb-10">Powered by computer vision and dermatology datasets for accurate, real-time skin diagnostics.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="text-center">
-        <img src="images/facemesh.jpg" alt="Face Mesh" class="mx-auto rounded-lg shadow-lg" />
+        <img src="images/facemesh.png" alt="Face Mesh" class="mx-auto rounded-lg shadow-lg" />
         <p class="mt-2 text-sm">Facial landmark detection using AI</p>
       </div>
       <div class="text-center">
-        <img src="images/skinmask.jpg" alt="Skin Mask" class="mx-auto rounded-lg shadow-lg" />
+        <img src="images/skinmask.png" alt="Skin Mask" class="mx-auto rounded-lg shadow-lg" />
         <p class="mt-2 text-sm">Skin mask segmentation for targeted analysis</p>
       </div>
     </div>
@@ -128,9 +124,8 @@
   </footer>
 
   <script>
-    // Create animated circles
     const circleContainer = document.getElementById('circles');
-    const colors = ['gold-circle','diamond-circle'];
+    const colors = ['circle','diamond-circle'];
     for(let i=0;i<25;i++){
       let circle = document.createElement('div');
       let size = Math.random() * 80 + 20;
