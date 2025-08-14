@@ -4,41 +4,110 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Beauty</title>
-  <link rel="stylesheet" href="smart-beauty.css">
-  <link href="https://fonts.googleapis.com/css2?family=Chic+Olivia&display=swap" rel="stylesheet">
+  <!-- Подключаем шрифт Brillant -->
+  <link href="https://fonts.googleapis.com/css2?family=Brillant&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Brillant', sans-serif;
+      background: url('images/sand.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #5C4033;
+      font-size: 1.5rem;
+      overflow-x: hidden;
+    }
+
+    section {
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.05);
+    }
+
+    h1, h2, h3 {
+      background: linear-gradient(90deg, #CBA135, #5C4033);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 8px rgba(255,255,255,0.3);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+      color: #5C4033;
+      font-size: 1.25rem;
+      text-shadow: 0 0 2px rgba(255,255,255,0.2);
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #CBA135;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      transition: all 0.3s;
+    }
+
+    a.button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #FFD700;
+    }
+
+    /* Круги на фоне */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .icon {
+      width: 80px;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+
+  </style>
 </head>
 <body>
+  <div id="circles"></div>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <img src="images/hero.png" alt="Smart Beauty" class="hero-img">
+  <section>
     <h1>Smart Beauty</h1>
     <p>AI-powered skin analysis in seconds</p>
-    <a href="#cta" class="cta-btn">Join Waitlist</a>
+    <a href="#cta" class="button">Join Waitlist</a>
   </section>
 
   <!-- Problem Section -->
-  <section class="problem">
+  <section>
     <h2>The Problem</h2>
     <p>Millions struggle to choose the right skincare. Traditional consultations are expensive, slow, and often generic. People want quick, personalized advice they can trust.</p>
   </section>
 
   <!-- How It Works -->
-  <section class="how-it-works">
+  <section>
     <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <img src="images/icon_camera.png" alt="Take Photo">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:3rem;">
+      <div>
+        <img src="images/icon_camera.png" class="icon" alt="Take Photo">
         <h3>1. Take a Photo</h3>
         <p>Upload 1–3 clear selfies from different angles.</p>
       </div>
-      <div class="step">
-        <img src="images/icon_ai.png" alt="AI Analysis">
+      <div>
+        <img src="images/icon_ai.png" class="icon" alt="AI Analysis">
         <h3>2. AI Analysis</h3>
         <p>Our AI detects wrinkles, acne, pigmentation, and more.</p>
       </div>
-      <div class="step">
-        <img src="images/icon_report.png" alt="Report">
+      <div>
+        <img src="images/icon_report.png" class="icon" alt="Report">
         <h3>3. Get Results</h3>
         <p>Receive instant, personalized skincare recommendations.</p>
       </div>
@@ -46,54 +115,79 @@
   </section>
 
   <!-- AI Technology -->
-  <section class="ai-tech">
+  <section>
     <h2>AI Technology</h2>
-    <div class="tech-grid">
-      <div class="tech-item">
-        <img src="images/facemesh.png" alt="Face Mesh">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:3rem; align-items:center;">
+      <div>
+        <img src="images/facemesh.png" class="icon" alt="Face Mesh">
         <p>Facial landmark detection using AI</p>
       </div>
-      <div class="tech-item">
-        <img src="images/skinmask.png" alt="Skin Mask">
+      <div>
+        <img src="images/skinmask.png" class="icon" alt="Skin Mask">
         <p>Skin mask segmentation for targeted analysis</p>
       </div>
     </div>
   </section>
 
   <!-- Benefits -->
-  <section class="benefits">
+  <section>
     <h2>Benefits</h2>
-    <div class="benefit-grid">
-      <div class="benefit">
-        <h3>Fast</h3>
-        <p>Get results in seconds, no waiting rooms.</p>
-      </div>
-      <div class="benefit">
-        <h3>Accurate</h3>
-        <p>Based on proven AI models and dermatology data.</p>
-      </div>
-      <div class="benefit">
-        <h3>Private</h3>
-        <p>Your images are processed securely and confidentially.</p>
-      </div>
-    </div>
+    <p>Fast, accurate, and private AI skin analysis for everyone.</p>
   </section>
 
   <!-- Call to Action -->
-  <section id="cta" class="cta-section">
+  <section id="cta">
     <h2>Be the First to Try Smart Beauty</h2>
-    <p>Sign up for early access and exclusive updates.</p>
-    <a href="https://forms.gle/" class="cta-btn">Join Waitlist</a>
+    <a href="https://forms.gle/" class="button">Join Waitlist</a>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Smart Beauty. All rights reserved.</p>
+  <footer style="text-align:center; padding:2rem; color:#5C4033;">
+    &copy; 2025 Smart Beauty. All rights reserved.
   </footer>
 
-  <!-- Circles Animation -->
-  <div id="circles"></div>
-  <script src="animation.js"></script>
+  <!-- JS для анимированных кругов -->
+  <script>
+    const circleContainer = document.getElementById('circles');
+    const circles = [];
+    for(let i=0;i<25;i++){
+      let circle = document.createElement('div');
+      let size = Math.random()*80+40;
+      circle.className='circle';
+      circle.style.width = size+'px';
+      circle.style.height = size+'px';
+      circle.style.top = Math.random()*window.innerHeight+'px';
+      circle.style.left = Math.random()*window.innerWidth+'px';
+      circle.style.opacity = Math.random()*0.5+0.2;
+      circleContainer.appendChild(circle);
+      circles.push({
+        el: circle,
+        x: parseFloat(circle.style.left),
+        y: parseFloat(circle.style.top),
+        dx: (Math.random()-0.5)*0.3,
+        dy: (Math.random()-0.5)*0.3,
+        opacityDir: Math.random()<0.5?0.002:-0.002
+      });
+    }
 
+    function animateCircles() {
+      circles.forEach(c => {
+        c.x += c.dx;
+        c.y += c.dy;
+        if(c.x< -100) c.x=window.innerWidth+100;
+        if(c.x>window.innerWidth+100) c.x=-100;
+        if(c.y< -100) c.y=window.innerHeight+100;
+        if(c.y>window.innerHeight+100) c.y=-100;
+
+        let newOpacity = parseFloat(c.el.style.opacity)+c.opacityDir;
+        if(newOpacity>0.6||newOpacity<0.2) c.opacityDir*=-1;
+        c.el.style.opacity = newOpacity;
+
+        c.el.style.transform = `translate(${c.x}px,${c.y}px)`;
+      });
+      requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
+  </script>
 </body>
 </html>
