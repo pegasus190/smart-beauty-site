@@ -4,21 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Beauty</title>
-  <!-- Подключаем шрифт Brillant -->
-  <link href="https://fonts.googleapis.com/css2?family=Brillant&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Brillant', sans-serif;
+      font-family: 'Garamond', 'Copperplate', serif;
       background: url('images/sand.png') no-repeat center center fixed;
       background-size: cover;
       color: #5C4033;
-      font-size: 1.5rem;
+      font-size: 3rem; /* увеличиваем основной текст в 2–3 раза */
       overflow-x: hidden;
     }
 
     section {
-      padding: 6rem 2rem;
+      padding: 8rem 2rem;
       text-align: center;
       position: relative;
       z-index: 1;
@@ -29,37 +27,40 @@
       background: linear-gradient(90deg, #CBA135, #5C4033);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 1px 1px 8px rgba(255,255,255,0.3);
-      margin-bottom: 1rem;
+      text-shadow: 1px 1px 12px rgba(255,255,255,0.4);
+      margin-bottom: 2rem;
+      font-size: 6rem; /* крупные заголовки */
+      animation: glow 3s ease-in-out infinite alternate;
     }
 
     p {
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto 2rem;
       line-height: 1.6;
       color: #5C4033;
-      font-size: 1.25rem;
-      text-shadow: 0 0 2px rgba(255,255,255,0.2);
+      font-size: 3rem; /* увеличиваем основной текст */
+      text-shadow: 0 0 4px rgba(255,255,255,0.2);
+      animation: textGlow 4s ease-in-out infinite alternate;
     }
 
     a.button {
       display: inline-block;
-      padding: 1rem 2rem;
+      padding: 1.5rem 3rem;
       background: #CBA135;
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 0.5rem;
+      border-radius: 1rem;
       margin-top: 1rem;
+      font-size: 3rem; /* кнопки тоже крупные */
       transition: all 0.3s;
     }
 
     a.button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px #FFD700;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #FFD700;
     }
 
-    /* Круги на фоне */
     .circle {
       position: absolute;
       border-radius: 50%;
@@ -69,9 +70,22 @@
     }
 
     .icon {
-      width: 80px;
+      width: 300px; /* увеличиваем картинки */
       margin: 0 auto 1rem;
       display: block;
+    }
+
+    /* Анимации мерцания */
+    @keyframes glow {
+      0% { text-shadow: 2px 2px 10px rgba(255,255,255,0.3); }
+      50% { text-shadow: 4px 4px 20px rgba(255,215,0,0.7); }
+      100% { text-shadow: 2px 2px 10px rgba(255,255,255,0.3); }
+    }
+
+    @keyframes textGlow {
+      0% { text-shadow: 0 0 4px rgba(255,255,255,0.2); }
+      50% { text-shadow: 0 0 10px rgba(255,215,0,0.5); }
+      100% { text-shadow: 0 0 4px rgba(255,255,255,0.2); }
     }
 
   </style>
@@ -95,7 +109,7 @@
   <!-- How It Works -->
   <section>
     <h2>How It Works</h2>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:3rem;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:4rem;">
       <div>
         <img src="images/icon_camera.png" class="icon" alt="Take Photo">
         <h3>1. Take a Photo</h3>
@@ -117,7 +131,7 @@
   <!-- AI Technology -->
   <section>
     <h2>AI Technology</h2>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:3rem; align-items:center;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:4rem; align-items:center;">
       <div>
         <img src="images/facemesh.png" class="icon" alt="Face Mesh">
         <p>Facial landmark detection using AI</p>
@@ -141,7 +155,7 @@
     <a href="https://forms.gle/" class="button">Join Waitlist</a>
   </section>
 
-  <footer style="text-align:center; padding:2rem; color:#5C4033;">
+  <footer style="text-align:center; padding:3rem; color:#5C4033; font-size:2rem;">
     &copy; 2025 Smart Beauty. All rights reserved.
   </footer>
 
@@ -151,7 +165,7 @@
     const circles = [];
     for(let i=0;i<25;i++){
       let circle = document.createElement('div');
-      let size = Math.random()*80+40;
+      let size = Math.random()*120+60;
       circle.className='circle';
       circle.style.width = size+'px';
       circle.style.height = size+'px';
@@ -173,10 +187,10 @@
       circles.forEach(c => {
         c.x += c.dx;
         c.y += c.dy;
-        if(c.x< -100) c.x=window.innerWidth+100;
-        if(c.x>window.innerWidth+100) c.x=-100;
-        if(c.y< -100) c.y=window.innerHeight+100;
-        if(c.y>window.innerHeight+100) c.y=-100;
+        if(c.x< -150) c.x=window.innerWidth+150;
+        if(c.x>window.innerWidth+150) c.x=-150;
+        if(c.y< -150) c.y=window.innerHeight+150;
+        if(c.y>window.innerHeight+150) c.y=-150;
 
         let newOpacity = parseFloat(c.el.style.opacity)+c.opacityDir;
         if(newOpacity>0.6||newOpacity<0.2) c.opacityDir*=-1;
